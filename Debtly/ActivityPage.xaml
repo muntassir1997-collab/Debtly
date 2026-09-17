@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Debtly.ActivityPage"
+    BackgroundColor="{AppThemeBinding Light=#F5F5F7, Dark=#17212B}">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="24,60,24,30"
+            Spacing="20">
+
+            <Label
+                Text="Activity"
+                FontSize="34"
+                FontAttributes="Bold"
+                TextColor="{AppThemeBinding Light=#1C1C1E, Dark=#FFFFFF}" />
+
+            <VerticalStackLayout
+                x:Name="ActivityList"
+                Spacing="10" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

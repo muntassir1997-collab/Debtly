@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Debtly.AddTransactionPage"
+    BackgroundColor="{AppThemeBinding Light=#F5F5F7, Dark=#17212B}">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="24,60,24,30"
+            Spacing="20">
+
+            <Label
+                Text="Add Transaction"
+                FontSize="34"
+                FontAttributes="Bold"
+                TextColor="{AppThemeBinding Light=#1C1C1E, Dark=#FFFFFF}" />
+
+            <Label
+                Text="Who gave the money?"
+                FontSize="16"
+                TextColor="{AppThemeBinding Light=#8E8E93, Dark=#8C9BA8}" />
+
+            <Grid
+                ColumnDefinitions="*,*"
+                ColumnSpacing="12">
+
+                <Button
+                    x:Name="YouGaveButton"
+                    Grid.Column="0"
+                    Text="You gave"
+                    FontSize="16"
+                    HeightRequest="55"
+                    CornerRadius="16"
+                    BackgroundColor="#007AFF"
+                    TextColor="White"
+                    Clicked="OnYouGaveClicked" />
+
+                <Button
+                    x:Name="TheyGaveButton"
+                    Grid.Column="1"
+                    Text="They gave"
+                    FontSize="16"
+                    HeightRequest="55"
+                    BackgroundColor="{AppThemeBinding Light=#FFFFFF, Dark=#202B36}"
+                    TextColor="{AppThemeBinding Light=#1C1C1E, Dark=#FFFFFF}"
+                    Clicked="OnTheyGaveClicked" />
+
+            </Grid>
+
+            <Label
+                Text="Amount"
+                FontSize="16"
+                TextColor="{AppThemeBinding Light=#8E8E93, Dark=#8C9BA8}"
+                Margin="0,10,0,0" />
+
+            <Border
+                BackgroundColor="{AppThemeBinding Light=#FFFFFF, Dark=#202B36}"
+                StrokeThickness="0"
+                Padding="16,4"
+                StrokeShape="RoundRectangle 16">
+
+                <Grid
+                    ColumnDefinitions="Auto,*"
+                    ColumnSpacing="8">
+
+                    <Label
+                        x:Name="CurrencyLabel"
+                        Grid.Column="0"
+                        Text="₪"
+                        FontSize="22"
+                        TextColor="{AppThemeBinding Light=#1C1C1E, Dark=#FFFFFF}"
+                        VerticalOptions="Center" />
+
+                    <Entry
+                        x:Name="AmountEntry"
+                        Grid.Column="1"
+                        Placeholder="0.00"
+                        Keyboard="Numeric"
+                        FontSize="22"
+                        TextColor="{AppThemeBinding Light=#1C1C1E, Dark=#FFFFFF}"
+                        PlaceholderColor="{AppThemeBinding Light=#8E8E93, Dark=#8C9BA8}" />
+
+                </Grid>
+
+            </Border>
+
+            <Label
+                Text="Note"
+                FontSize="16"
+                TextColor="{AppThemeBinding Light=#8E8E93, Dark=#8C9BA8}"
+                Margin="0,10,0,0" />
+
+            <Border
+                BackgroundColor="{AppThemeBinding Light=#FFFFFF, Dark=#202B36}"
+                StrokeThickness="0"
+                Padding="16,4"
+                StrokeShape="RoundRectangle 16">
+
+                <Entry
+                    x:Name="NoteEntry"
+                    Placeholder="Optional"
+                    FontSize="18"
+                    TextColor="{AppThemeBinding Light=#1C1C1E, Dark=#FFFFFF}"
+                    PlaceholderColor="{AppThemeBinding Light=#8E8E93, Dark=#8C9BA8}" />
+
+            </Border>
+
+            <Button
+                Text="Save Transaction"
+                FontSize="17"
+                FontAttributes="Bold"
+                TextColor="White"
+                BackgroundColor="#007AFF"
+                CornerRadius="18"
+                HeightRequest="56"
+                Margin="0,10,0,0"
+                Clicked="OnSaveTransactionClicked" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Debtly.PeoplePage"
+    BackgroundColor="{AppThemeBinding Light=#F5F5F7, Dark=#17212B}">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="24,60,24,30"
+            Spacing="20">
+
+            <Grid
+                ColumnDefinitions="*,Auto">
+
+                <Label
+                    Text="People"
+                    FontSize="34"
+                    FontAttributes="Bold"
+                    TextColor="{AppThemeBinding Light=#1C1C1E, Dark=#FFFFFF}"
+                    VerticalOptions="Center" />
+
+                <Border
+                    Grid.Column="1"
+                    BackgroundColor="{AppThemeBinding Light=#E5E5EA, Dark=#2B3945}"
+                    StrokeThickness="0"
+                    StrokeShape="RoundRectangle 12"
+                    Padding="10,5"
+                    VerticalOptions="Center">
+
+                    <Label
+                        x:Name="PeopleCountLabel"
+                        Text="0"
+                        FontSize="15"
+                        FontAttributes="Bold"
+                        TextColor="{AppThemeBinding Light=#8E8E93, Dark=#8C9BA8}" />
+
+                </Border>
+
+            </Grid>
+
+            <Button
+                Text="+  Add Person"
+                FontSize="17"
+                FontAttributes="Bold"
+                TextColor="White"
+                BackgroundColor="#007AFF"
+                CornerRadius="18"
+                HeightRequest="56"
+                Clicked="OnAddPersonClicked" />
+
+            <Border
+                BackgroundColor="{AppThemeBinding Light=#E5E5EA, Dark=#202B36}"
+                StrokeThickness="0"
+                StrokeShape="RoundRectangle 14"
+                HeightRequest="46"
+                Padding="12,0">
+
+                <Grid
+                    ColumnDefinitions="Auto,*"
+                    ColumnSpacing="8">
+
+                    <Label
+                        Text="⌕"
+                        FontSize="24"
+                        TextColor="{AppThemeBinding Light=#8E8E93, Dark=#8C9BA8}"
+                        VerticalOptions="Center" />
+
+                    <Entry
+                        Grid.Column="1"
+                        x:Name="SearchEntry"
+                        Placeholder="Search people"
+                        FontSize="16"
+                        TextColor="{AppThemeBinding Light=#1C1C1E, Dark=#FFFFFF}"
+                        PlaceholderColor="{AppThemeBinding Light=#8E8E93, Dark=#8C9BA8}"
+                        BackgroundColor="Transparent"
+                        ClearButtonVisibility="WhileEditing"
+                        VerticalOptions="Center"
+                        TextChanged="OnSearchTextChanged" />
+
+                </Grid>
+
+            </Border>
+
+            <VerticalStackLayout
+                x:Name="PeopleList"
+                Spacing="10" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

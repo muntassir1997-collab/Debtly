@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Shell
+    x:Class="Debtly.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Debtly"
+    Title="Debtly">
+
+    <TabBar>
+
+        <ShellContent
+            Title="Home"
+            Icon="home.png"
+            ContentTemplate="{DataTemplate local:MainPage}"
+            Route="MainPage" />
+
+        <ShellContent
+            Title="People"
+            Icon="people.png"
+            ContentTemplate="{DataTemplate local:PeoplePage}"
+            Route="PeoplePage" />
+
+        <ShellContent
+            Title="Activity"
+            Icon="activity.png"
+            ContentTemplate="{DataTemplate local:ActivityPage}"
+            Route="ActivityPage" />
+
+        <ShellContent
+            Title="Settings"
+            Icon="settings.png"
+            ContentTemplate="{DataTemplate local:SettingsPage}"
+            Route="SettingsPage" />
+
+    </TabBar>
+
+</Shell>

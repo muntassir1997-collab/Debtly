@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Debtly.AddPersonPage"
+    BackgroundColor="{AppThemeBinding Light=#F5F5F7, Dark=#17212B}">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="24,60,24,30"
+            Spacing="20">
+
+            <Label
+                Text="Add Person"
+                FontSize="34"
+                FontAttributes="Bold"
+                TextColor="{AppThemeBinding Light=#1C1C1E, Dark=#FFFFFF}" />
+
+            <Label
+                Text="Enter the person's name"
+                FontSize="16"
+                TextColor="{AppThemeBinding Light=#8E8E93, Dark=#8C9BA8}" />
+
+            <Border
+                BackgroundColor="{AppThemeBinding Light=#FFFFFF, Dark=#202B36}"
+                StrokeThickness="0"
+                Padding="16,4"
+                StrokeShape="RoundRectangle 16">
+
+                <Entry
+                    x:Name="NameEntry"
+                    Placeholder="Name"
+                    FontSize="18"
+                    TextColor="{AppThemeBinding Light=#1C1C1E, Dark=#FFFFFF}"
+                    PlaceholderColor="{AppThemeBinding Light=#8E8E93, Dark=#8C9BA8}" />
+
+            </Border>
+
+            <Button
+                Text="Add Person"
+                FontSize="17"
+                FontAttributes="Bold"
+                TextColor="White"
+                BackgroundColor="#007AFF"
+                CornerRadius="18"
+                HeightRequest="56"
+                Margin="0,10,0,0"
+                Clicked="OnAddPersonClicked" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

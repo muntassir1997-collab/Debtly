@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Debtly.PersonPage"
+    BackgroundColor="{AppThemeBinding Light=#F5F5F7, Dark=#17212B}">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="24,60,24,30"
+            Spacing="20">
+
+            <Label
+                x:Name="PersonNameLabel"
+                Text="Person"
+                FontSize="34"
+                FontAttributes="Bold"
+                TextColor="{AppThemeBinding Light=#1C1C1E, Dark=#FFFFFF}" />
+
+            <Border
+                BackgroundColor="{AppThemeBinding Light=#FFFFFF, Dark=#202B36}"
+                StrokeThickness="0"
+                Padding="22"
+                StrokeShape="RoundRectangle 24">
+
+                <VerticalStackLayout Spacing="8">
+
+                    <Label
+                        x:Name="BalanceTitleLabel"
+                        Text="Balance"
+                        FontSize="15"
+                        TextColor="{AppThemeBinding Light=#8E8E93, Dark=#8C9BA8}" />
+
+                    <Label
+                        x:Name="BalanceLabel"
+                        Text="₪ 0.00"
+                        FontSize="36"
+                        FontAttributes="Bold"
+                        TextColor="{AppThemeBinding Light=#1C1C1E, Dark=#FFFFFF}" />
+
+                </VerticalStackLayout>
+
+            </Border>
+
+            <Button
+                Text="+  Add Transaction"
+                FontSize="17"
+                FontAttributes="Bold"
+                TextColor="White"
+                BackgroundColor="#007AFF"
+                CornerRadius="18"
+                HeightRequest="56"
+                Margin="0,0,0,0"
+                Clicked="OnAddTransactionClicked" />
+
+            <Label
+                Text="Transactions"
+                FontSize="22"
+                FontAttributes="Bold"
+                TextColor="{AppThemeBinding Light=#1C1C1E, Dark=#FFFFFF}"
+                Margin="0,10,0,0" />
+
+            <VerticalStackLayout
+                x:Name="TransactionsList"
+                Spacing="10" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

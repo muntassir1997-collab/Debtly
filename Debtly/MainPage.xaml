@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:lvc="clr-namespace:LiveChartsCore.SkiaSharpView.Maui;assembly=LiveChartsCore.SkiaSharpView.Maui"
+    x:Class="Debtly.MainPage"
+    BackgroundColor="{AppThemeBinding Light=#F5F5F7, Dark=#17212B}">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="24,60,24,30"
+            Spacing="20">
+
+            <Label
+                Text="Good evening"
+                FontSize="16"
+                TextColor="{AppThemeBinding Light=#8E8E93, Dark=#8C9BA8}" />
+
+            <Label
+                Text="Your Money"
+                FontSize="34"
+                FontAttributes="Bold"
+                TextColor="{AppThemeBinding Light=#1C1C1E, Dark=#FFFFFF}" />
+
+            <!-- Net balance -->
+
+            <Border
+                BackgroundColor="{AppThemeBinding Light=#FFFFFF, Dark=#202B36}"
+                StrokeThickness="0"
+                Padding="22"
+                StrokeShape="RoundRectangle 24">
+
+                <VerticalStackLayout Spacing="8">
+
+                    <Label
+                        Text="Net balance"
+                        FontSize="15"
+                        TextColor="{AppThemeBinding Light=#8E8E93, Dark=#8C9BA8}" />
+
+                    <Label
+                        x:Name="NetBalanceLabel"
+                        Text="₪ 0.00"
+                        FontSize="36"
+                        FontAttributes="Bold"
+                        TextColor="{AppThemeBinding Light=#1C1C1E, Dark=#FFFFFF}" />
+
+                </VerticalStackLayout>
+
+            </Border>
+
+            <!-- You owe / Owed to you -->
+
+            <Grid
+                ColumnDefinitions="*,*"
+                ColumnSpacing="12">
+
+                <Border
+                    Grid.Column="0"
+                    BackgroundColor="{AppThemeBinding Light=#FFFFFF, Dark=#202B36}"
+                    StrokeThickness="0"
+                    Padding="18"
+                    StrokeShape="RoundRectangle 20">
+
+                    <VerticalStackLayout Spacing="6">
+
+                        <Label
+                            Text="You owe"
+                            FontSize="14"
+                            TextColor="{AppThemeBinding Light=#8E8E93, Dark=#8C9BA8}" />
+
+                        <Label
+                            x:Name="YouOweLabel"
+                            Text="₪ 0"
+                            FontSize="24"
+                            FontAttributes="Bold"
+                            TextColor="{AppThemeBinding Light=#1C1C1E, Dark=#FFFFFF}" />
+
+                    </VerticalStackLayout>
+
+                </Border>
+
+                <Border
+                    Grid.Column="1"
+                    BackgroundColor="{AppThemeBinding Light=#FFFFFF, Dark=#202B36}"
+                    StrokeThickness="0"
+                    Padding="18"
+                    StrokeShape="RoundRectangle 20">
+
+                    <VerticalStackLayout Spacing="6">
+
+                        <Label
+                            Text="Owed to you"
+                            FontSize="14"
+                            TextColor="{AppThemeBinding Light=#8E8E93, Dark=#8C9BA8}" />
+
+                        <Label
+                            x:Name="OwedToYouLabel"
+                            Text="₪ 0"
+                            FontSize="24"
+                            FontAttributes="Bold"
+                            TextColor="{AppThemeBinding Light=#1C1C1E, Dark=#FFFFFF}" />
+
+                    </VerticalStackLayout>
+
+                </Border>
+
+            </Grid>
+
+            <!-- Balance history -->
+
+            <Border
+                BackgroundColor="{AppThemeBinding Light=#FFFFFF, Dark=#202B36}"
+                StrokeThickness="0"
+                Padding="20"
+                StrokeShape="RoundRectangle 24">
+
+                <VerticalStackLayout Spacing="6">
+
+                    <Label
+                        Text="Balance history"
+                        FontSize="18"
+                        FontAttributes="Bold"
+                        TextColor="{AppThemeBinding Light=#1C1C1E, Dark=#FFFFFF}" />
+
+                    <Label
+                        Text="Your net balance over time"
+                        FontSize="14"
+                        TextColor="{AppThemeBinding Light=#8E8E93, Dark=#8C9BA8}" />
+
+                    <Grid
+                        x:Name="ChartContainer"
+                        HeightRequest="220"
+                        Margin="0,10,0,0">
+
+                        <lvc:CartesianChart
+                            x:Name="BalanceChart"
+                            HorizontalOptions="Fill"
+                            VerticalOptions="Fill">
+
+                            <lvc:CartesianChart.Series>
+
+                                <lvc:SeriesCollection>
+
+                                    <lvc:XamlLineSeries
+                                        Values="{Binding BalanceChartValues}"
+                                        Fill="{x:Null}"
+                                        GeometrySize="7"
+                                        LineSmoothness="1" />
+
+                                </lvc:SeriesCollection>
+
+                            </lvc:CartesianChart.Series>
+
+                            <lvc:CartesianChart.XAxes>
+
+                                <lvc:AxesCollection>
+
+                                    <lvc:XamlAxis
+                                        Labels="{Binding BalanceChartLabels}"
+                                        LabelsRotation="0"
+                                        TextSize="10"
+                                        MinStep="1" />
+
+                                </lvc:AxesCollection>
+
+                            </lvc:CartesianChart.XAxes>
+
+                            <lvc:CartesianChart.YAxes>
+
+                                <lvc:AxesCollection>
+
+                                    <lvc:XamlAxis
+                                        IsVisible="False" />
+
+                                </lvc:AxesCollection>
+
+                            </lvc:CartesianChart.YAxes>
+
+                        </lvc:CartesianChart>
+
+                    </Grid>
+
+                </VerticalStackLayout>
+
+            </Border>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
